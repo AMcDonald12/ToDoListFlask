@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<header>
+    <section>
+        <form action="{{ url_for('sign_out') }}" method="POST">
+            <label class="welcome">Hi, {{ user }}</label>
+            <button class="sign_out" type="submit">Sign Out</button>
+        </form>
+    </section>
+</header>
+<body>
+    <!-- Intro Section: Title, Quotes, and Entry-->
+    <section class="intro">
+        <div class="container">
+            <div class="row-1">
+                <div class="column-1">
+                    <h1 class="box">TO\DO List</h1>
+                    <form action="{{ url_for('add') }}" method="POST">
+                        <label>What do you need to get done?</label>
+                        <input name="task" type="text" autocomplete="off" autofocus="autofocus">
+                        <button class="add_button" type="submit">Add to List</button>
+                    </form>
+                </div>
+                <div class="column-1">
+                    <blockquote class="quote">
+                        {{ quote[0]['q'] }} <footer> - {{ quote[0]['a'] }}</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>    
+    </section>
+    <hr class="sandwiched">
+    <hr class="edge">
+    <!--To Do List Section-->
+    <section class="main">
+        <div class="container">
+            <div class="row-2">
+                <div class="column-2">
+                    <h2>Everything To Do:</h2>
+                    <ul>
+                        {% for to_do in to_do_list %}
+                        {% if to_do.priority == False and to_do.complete == False %}
+                        <li>
+                            {{to_do.task}}
+                            <br>
+                            <a class="delete" href="{{ url_for('delete', id=to_do.id) }}">&nbsp Delete &nbsp</a>
+                            <a class="prioritize" href="{{ url_for('prioritize', id=to_do.id) }}">&nbsp Prioritze &nbsp</a>
+                            <a class="complete" href="{{ url_for('complete', id=to_do.id) }}">&nbsp Complete &nbsp</a>
+                        </li>
+                        {% endif %}
+                        {% endfor%}
+                    </ul>
+                </div>
+                <div class="column-2">
+                    <h2>Priority:</h2>
+                    <ul>
+                        {% if to_do_list == [] %}
+                        <br>
+                        <br>
+                        <p class="empty">😎 Let's get some stuff done 📈</p>
+                        {% endif %}
+
+                        {% for to_do in to_do_list %}
+                        {% if to_do.priority == True and to_do.complete == False %}
+                        <li>
+                            {{to_do.task}}
+                            <br>
+                            <a class="delete" href="{{ url_for('delete', id=to_do.id) }}">&nbsp Delete &nbsp</a>
+                            <a class="prioritize" href="{{ url_for('do_later', id=to_do.id) }}">&nbsp Do Later &nbsp</a>
+                            <a class="complete" href="{{ url_for('complete', id=to_do.id) }}">&nbsp Complete &nbsp</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="column-3">
+                    <h2>Completed:</h2>
+                    <ul>
+                        {% for to_do in to_do_list %}
+                        {% if to_do.priority == False and to_do.complete == True %}
+                        <li>
+                            {{to_do.task}}
+                            <br>
+                            <a class="delete" href="{{ url_for('delete', id=to_do.id) }}">&nbsp Delete &nbsp</a>
+                            <a class="prioritize" href="{{ url_for('do_later', id=to_do.id) }}">&nbsp Do Again &nbsp</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>    
+    </section>
+</body>
+<footer>
+</html>

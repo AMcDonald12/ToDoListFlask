@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to use TO\DO List</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <section>
+        <div class="sign_in_container">
+            <h1 class="box">&nbsp TO\DO List &nbsp</h1>
+                <form class="sign_in_form" action="{{ url_for('sign_up') }}" method="POST">
+                    <label>Username:</label>
+                    <input name="user" type="text" autocomplete="off" autofocus="autofocus">
+                    <br>
+                    <label>Password:</label>
+                    <input name="password" type="password">
+                    <br>
+                    <label>Confirm Password:</label>
+                    <input name="confirm_password" type="password">
+                    <br>
+                    <button class="add_button" type="submit">Sign Up</button>
+                </form>
+                    {% if exists == True %}
+                    <p>Username already exists. Choose another Username or sign in below.</p>
+                    <form class="sign_in_form" action="{{ url_for('sign_in') }}" method="POST">
+                        <p>Already have a Username? Sign in here:</p>
+                        <label>Username:</label>
+                        <input name="user" type="text" autocomplete="off">
+                        <br>
+                        <label>Password:</label>
+                        <input name="password" type="password">
+                        <br>
+                        <button class="add_button" type="submit" name="action" value="in">Sign in</button>
+                    </form>
+                    {% endif %}
+                    {% if empty == True %}
+                    <p>Please enter a Username and Password</p>
+                    {% endif %}
+                    {% if match == False %}
+                    <p>Passwords do not match. Try again.</p>
+                    {% endif %}
+        </div>
+    </section>    
+</body>
+</html>

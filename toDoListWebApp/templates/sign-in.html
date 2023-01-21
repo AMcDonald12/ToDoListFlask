@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to use TO\DO List</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <section>
+        <div class="sign_in_container">
+            <h1 class="box">&nbsp TO\DO List &nbsp</h1>
+                <form class="sign_in_form" action="{{ url_for('sign_in') }}" method="POST">
+                    <label>Username:</label>
+                    <input name="user" type="text" autocomplete="off" autofocus="autofocus">
+                    <br>
+                    <label>Password:</label>
+                    <input name="password" type="password">
+                    <br>
+                    <button class="add_button" type="submit" name="action" value="in">Sign in</button>
+                    <button class="add_button" type="submit" name="action" value="up">Sign up</button>
+                    {% if no_user == True %}
+                    <p>Username does not exist. Sign up to continue.</p>
+                    {% endif %}
+                    {% if incorrect == True %}
+                    <p>Password is incorrect.</p>
+                    {% endif %}
+                </form>
+        </div>
+    </section>    
+</body>
+</html>
