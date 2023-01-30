@@ -1,4 +1,1 @@
-# portfolio-projects
-
-This repository includes a selection of projects to showcase my ability to write code
-to solve problems and execute tasks
+This is a basic Kanban style to-do list website built using the Flask framework. Some key features: sign in page; user data and todos stored in a database so they persist between sessions; tasks can be marked as ’todo,’ priority,’ or ‘completed’ and update to the correct column; motivational quotes on the main page pulled from an API; styled with CSS and responsive to different screen sizes.
