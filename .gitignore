@@ -1,0 +1,6 @@
+#Environment
+venv
+
+#Database
+instance
+todo.db
