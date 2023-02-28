@@ -1,27 +1,39 @@
+:root {
+    --bg1: #2ee4bb;
+    --bg1border: #27c09c;
+    --bg2: white;
+    --bg3: black;
+    --accent: salmon;
+    --complete: #1eab8a;
+    --delete: salmon;
+    --priority: darkorchid;
+    --list: bisque; 
+}
+
 header {
-    background-color: #2ee4bb;
+    background-color: var(--bg1);
     text-align: right;
 }
 
 .welcome {
     font-size: medium;
-    background-color: #2ee4bb;
+    background-color: var(--bg1);
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .sign_out {
-    background-color: #2ee4bb;
+    background-color: var(--bg1);
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: 2px solid #27c09c;
+    border: 2px solid var(--bg1border);
     border-radius: 25px;
     font-size: medium;
     padding: 5px;
 }
 
 .intro {
-    background-color: #2ee4bb;
+    background-color: var(--bg1);
     color: black;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -59,7 +71,7 @@ input {
 
 .add_button{
     border-radius: 25px;
-    background-color: salmon;
+    background-color: var(--accent);
     color: white;
     font-size: medium;
 }
@@ -78,15 +90,15 @@ hr {
 }
 
 .sandwiched {
-    color: salmon;
+    color: var(--accent);
 }
 
 .edge {
-    color:#2ee4bb;
+    color: var(--bg1);
 }
 
 .main {
-    background-color: white;
+    background-color: var(--bg2);
     color: black;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -116,12 +128,12 @@ ul {
 }
 
 li {
-    border: bisque;
+    border: var(--list);
     padding: 4px;
     border-radius: 25px;
     border-bottom: black solid 1px;
     border-right: black solid 1px;
-    background-color: bisque;
+    background-color: var(--list);
     text-align: center;
     margin-right: 4vw;
     font-size: large;
@@ -129,7 +141,7 @@ li {
 
 .delete {
     color: white;
-    background-color: salmon;
+    background-color: var(--delete);
     border-bottom: black solid 1px;
     border-right: black solid 1px;
     border-radius: 25px;
@@ -139,7 +151,7 @@ li {
 
 .prioritize {
     color: white;
-    background-color: darkorchid;
+    background-color: var(--priority);
     border-bottom: black solid 1px;
     border-right: black solid 1px;
     border-radius: 25px;
@@ -150,7 +162,7 @@ li {
 
 .complete {
     color: white;
-    background-color:#1eab8a;
+    background-color: var(--complete);
     border-bottom: black solid 1px;
     border-right: black solid 1px;
     border-radius: 25px;
@@ -163,13 +175,13 @@ a {
 }
 
 .outro {
-    background-color: black;
+    background-color: var(--bg3);
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .sign_in_container {
-    background-color: #2ee4bb;
+    background-color: var(--bg1);
     color: black;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: larger;
