@@ -1,13 +1,16 @@
 :root {
-    --bg1: #2ee4bb;
-    --bg1border: #27c09c;
+    --bg1: #4E6E81;
+    --bg1border: #F9DBBB;
     --bg2: white;
-    --bg3: black;
-    --accent: salmon;
-    --complete: #1eab8a;
-    --delete: salmon;
-    --priority: darkorchid;
-    --list: bisque; 
+    --bg3: #2E3840;
+    --font1: #F9DBBB;
+    --font2: white;
+    --font3: #2E3840;
+    --accent: #FF0303;
+    --complete: #2E3840;
+    --delete: #FF0303;
+    --priority: #4E6E81;
+    --list: #F9DBBB; 
 }
 
 header {
@@ -18,13 +21,21 @@ header {
 .welcome {
     font-size: medium;
     background-color: var(--bg1);
-    color: white;
+    color: var(--font1);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+    color: var(--bg3);
+}
+
+input:focus {
+    outline-color: var(--bg1);
 }
 
 .sign_out {
     background-color: var(--bg1);
-    color: white;
+    color: var(--font1);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: 2px solid var(--bg1border);
     border-radius: 25px;
@@ -32,9 +43,14 @@ header {
     padding: 5px;
 }
 
+.sign_out:hover {
+    background-color: var(--font1);
+    color: var(--bg1);
+}
+
 .intro {
     background-color: var(--bg1);
-    color: black;
+    color: var(--font1);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -56,7 +72,7 @@ header {
 }
 
 .box {
-    border: 2px solid black;
+    border: 2px solid var(--font1);
     border-radius: 25px;
     font-size: xx-large;
 }
@@ -72,8 +88,13 @@ input {
 .add_button{
     border-radius: 25px;
     background-color: var(--accent);
-    color: white;
+    color: var(--font2);
     font-size: medium;
+}
+
+.add_button:hover{
+    background-color: var(--font2);
+    color: var(--accent);
 }
 
 .quote {
@@ -99,7 +120,7 @@ hr {
 
 .main {
     background-color: var(--bg2);
-    color: black;
+    color: var(--font3);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -140,7 +161,7 @@ li {
 }
 
 .delete {
-    color: white;
+    color: var(--font2);
     background-color: var(--delete);
     border-bottom: black solid 1px;
     border-right: black solid 1px;
@@ -149,8 +170,13 @@ li {
     font-size: small;
 }
 
+.delete:hover {
+    color: var(--delete);
+    background-color: var(--font2);
+}
+
 .prioritize {
-    color: white;
+    color: var(--font2);
     background-color: var(--priority);
     border-bottom: black solid 1px;
     border-right: black solid 1px;
@@ -159,9 +185,13 @@ li {
     font-size: small;
 }
 
+.prioritize:hover {
+    color: var(--priority);
+    background-color: var(--font2);
+}
 
 .complete {
-    color: white;
+    color: var(--font2);
     background-color: var(--complete);
     border-bottom: black solid 1px;
     border-right: black solid 1px;
@@ -170,19 +200,24 @@ li {
     font-size: small;
 }
 
+.complete:hover {
+    color: var(--complete);
+    background-color: var(--font2);
+}
+
 a {
     text-decoration: none;
 }
 
 .outro {
     background-color: var(--bg3);
-    color: white;
+    color: var(--font2);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .sign_in_container {
     background-color: var(--bg1);
-    color: black;
+    color: var(--font1);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: larger;
     height: 100vh;
